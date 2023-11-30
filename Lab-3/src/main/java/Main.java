@@ -1,6 +1,11 @@
+import clases_21159364_BricenoVilches.Option_21159364_BricenoVilches;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static List<Option_21159364_BricenoVilches> options = new ArrayList<>();
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         final int MENU_EXIT_OPTION = 5;
@@ -14,7 +19,8 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    //do something
+                    Option_21159364_BricenoVilches newOption = Option_21159364_BricenoVilches.crearOpcionConsola(input);
+                    options.add(newOption);
                     break;
 
                 case 2:
