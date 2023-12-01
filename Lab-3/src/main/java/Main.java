@@ -24,7 +24,7 @@ public class Main {
                     break;
 
                 case 2:
-                    //do something
+                    Option_21159364_BricenoVilches.mostrarOpciones(options);
                     break;
 
                 case 3:
@@ -55,7 +55,7 @@ public class Main {
     private static void printMenu() {
         System.out.println("Main Menu\n");
         System.out.print("1. Crear Opción \n");
-        System.out.print("2. Modify something.\n");
+        System.out.print("2. Mostrar opcion.\n");
         System.out.print("3. Sum 2 numbers.\n");
         System.out.print("4. Some option.\n");
         System.out.print("5. Exit\n");
