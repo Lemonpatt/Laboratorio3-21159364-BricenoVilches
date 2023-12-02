@@ -5,8 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static List<Option_21159364_BricenoVilches> options = new ArrayList<>();
-    public static void main(String[] args) {
+    private List<Option_21159364_BricenoVilches> options = new ArrayList<>();
+    public static void main(String[] args){
+        Main mainInstance = new Main();
+        mainInstance.run();
+    }
+    public void run() {
         Scanner input = new Scanner(System.in);
         final int MENU_EXIT_OPTION = 5;
 
@@ -19,14 +23,16 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    Option_21159364_BricenoVilches newOption = Option_21159364_BricenoVilches.crearOpcionConsola(input);
-                    options.add(newOption);
+                    Option_21159364_BricenoVilches Option = Option_21159364_BricenoVilches.crearOpcionConsola(input);
+                    options.add(Option);
                     break;
-
                 case 2:
-                    Option_21159364_BricenoVilches.mostrarOpciones(options);
+                    if (!options.isEmpty()) {
+                        Option_21159364_BricenoVilches.mostrarOpciones(options);
+                    } else {
+                        System.out.println("No hay opciones en el sistema");
+                    }
                     break;
-
                 case 3:
                     System.out.println("Sum 2 numbers");
                     System.out.println("Ingrese un número int y luego presione ENTER:");
