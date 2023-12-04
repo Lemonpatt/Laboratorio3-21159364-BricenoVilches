@@ -52,9 +52,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         String name = input.nextLine();
         List<Option_21159364_BricenoVilches> opciones = new ArrayList<>();
         System.out.println("Opciones disponibles:");
-        for (int i = 0; i < optionsDisponibles.size(); i++) {
-            System.out.println((i + 1) + ". " + optionsDisponibles.get(i).getId());
-        }
+        Option_21159364_BricenoVilches.mostrarOpciones(optionsDisponibles);
         System.out.println("Elija el número de la opcion a agregar (presione 0 para salir):");
         int optionChoice;
         do {
@@ -77,7 +75,11 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         return new Flow_21159364_BricenoVilches(id, name, opciones);
     }
     public void flowAddOption(Option_21159364_BricenoVilches option){
-        this.options.add(option);
+        if (!optionDuplicada(getOptions(), option.getId())) {
+            this.options.add(option);
+        } else {
+
+        }
     }
     private static boolean optionDuplicada(List<Option_21159364_BricenoVilches> options, int id){
         for(Option_21159364_BricenoVilches option : options){
@@ -87,5 +89,13 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         }
         return false;
     }
-
+    public static void mostrarFlows(List<Flow_21159364_BricenoVilches> flows){
+        int i = 1;
+        for (Flow_21159364_BricenoVilches flow : flows){
+            System.out.println((i++) + ". " +flow);
+        }
+    }
+    public String toString(){
+        return "Flow(" + id + "," + name +"," + options +")";
+    }
 }

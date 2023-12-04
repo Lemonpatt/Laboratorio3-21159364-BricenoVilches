@@ -82,8 +82,9 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
         return new Option_21159364_BricenoVilches(id, message, chatbotCodeLink, initialFlowCodeLink, keywords);
     }
     public static void mostrarOpciones(List<Option_21159364_BricenoVilches> opciones){
+        int i = 1;
         for (Option_21159364_BricenoVilches opcion : opciones){
-            System.out.println(opcion);
+            System.out.println((i++)+ ". " + opcion);
         }
     }
     public String toString(){
