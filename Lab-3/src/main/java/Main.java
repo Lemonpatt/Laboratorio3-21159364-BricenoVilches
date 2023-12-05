@@ -1,10 +1,7 @@
 import clases_21159364_BricenoVilches.Flow_21159364_BricenoVilches;
 import clases_21159364_BricenoVilches.Option_21159364_BricenoVilches;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     List<Option_21159364_BricenoVilches> options = new ArrayList<>();
@@ -31,19 +28,20 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    Option_21159364_BricenoVilches Option = Option_21159364_BricenoVilches.crearOpcionConsola(input);
-                    options.add(Option);
+                    Option_21159364_BricenoVilches optionInstance = new Option_21159364_BricenoVilches();
+                    options.add(optionInstance.crearOpcionConsola(input));
                     break;
                 case 2:
                     if (!options.isEmpty()) {
-                        Option_21159364_BricenoVilches.mostrarOpciones(options);
+                        optionInstance = new Option_21159364_BricenoVilches();
+                        optionInstance.mostrarOpciones(options);
                     } else {
                         System.out.println("No hay opciones en el sistema");
                     }
                     break;
                 case 3:
-                    Flow_21159364_BricenoVilches Flow = Flow_21159364_BricenoVilches.crearFlowConsola(input, options);
-                    flows.add(Flow);
+                    Flow_21159364_BricenoVilches flowInstance = new Flow_21159364_BricenoVilches();
+                    flows.add(flowInstance.crearFlowConsola(input, options));
                     break;
 
                 case 4:
@@ -59,7 +57,8 @@ public class Main {
                             System.out.println("Flujo añadido:" + flowElegido);
                             int optionChoice;
                             System.out.println("Eliga opción a añadir al flujo");
-                            Option_21159364_BricenoVilches.mostrarOpciones(options);
+                            optionInstance = new Option_21159364_BricenoVilches();
+                            optionInstance.mostrarOpciones(options);
                             optionChoice = input.nextInt();
                             input.nextLine();
                             if (optionChoice > 0 && optionChoice <= options.size()) {

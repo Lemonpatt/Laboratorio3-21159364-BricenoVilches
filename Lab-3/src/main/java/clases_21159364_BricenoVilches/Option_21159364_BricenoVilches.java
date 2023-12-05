@@ -16,6 +16,14 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
 /**
 
  */
+
+public Option_21159364_BricenoVilches() {
+    this.id = 0;
+    this.message = "";
+    this.chatbotCodeLink = 0;
+    this.initialFlowCodeLink = 0;
+    this.keywords = new ArrayList<>();
+}
     public Option_21159364_BricenoVilches(int id, String message, int chatbotCodeLink, int initialFlowCodeLink, List<String> keywords) {
         this.id = id;
         this.message = message;
@@ -60,7 +68,8 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
     public void setKeywords(List<String> keywords) {
         this.keywords = keywords;
     }
-    public static Option_21159364_BricenoVilches crearOpcionConsola(Scanner input) {
+    @Override
+    public Option_21159364_BricenoVilches crearOpcionConsola(Scanner input) {
         System.out.println("Ingrese el ID:");
         int id = input.nextInt();
         input.nextLine();
@@ -81,7 +90,8 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
 
         return new Option_21159364_BricenoVilches(id, message, chatbotCodeLink, initialFlowCodeLink, keywords);
     }
-    public static void mostrarOpciones(List<Option_21159364_BricenoVilches> opciones){
+
+    public void mostrarOpciones(List<Option_21159364_BricenoVilches> opciones){
         int i = 1;
         for (Option_21159364_BricenoVilches opcion : opciones){
             System.out.println((i++)+ ". " + opcion);
