@@ -27,4 +27,5 @@ public interface OptionInterfaz_21159364_BricenoVilches {
     Option_21159364_BricenoVilches crearOpcionConsola(Scanner input);
 
     void mostrarOpciones(List<Option_21159364_BricenoVilches> options);
+    String toString();
 }
