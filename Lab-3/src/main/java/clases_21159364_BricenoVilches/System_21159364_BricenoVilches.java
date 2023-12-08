@@ -1,7 +1,6 @@
 package clases_21159364_BricenoVilches;
 
 import interfaces_21159364_BricenoVilches.SystemInterfaz_21159364_BricenoVilches;
-import interfaces_21159364_BricenoVilches.UsuariosInterfaz_21159364_BricenoVilches;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +9,8 @@ import java.util.Scanner;
 public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_BricenoVilches {
     private String name;
     private int initialChatbotCodeLink;
-    private List<UsuariosInterfaz_21159364_BricenoVilches> users;
-    private UsuariosInterfaz_21159364_BricenoVilches userLogged;
+    private List<Usuarios_21159364_BricenoVilches> users;
+    private Usuarios_21159364_BricenoVilches userLogged;
     private List<Chatbot_21159364_BricenoVilches> chatbots;
 
     public System_21159364_BricenoVilches(){
@@ -27,6 +26,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         this.users = new ArrayList<>();
         this.userLogged = null;
         this.chatbots = chatbots;
+        System.out.println("System creado exitosamente.");
     }
 
     public String getName() {
@@ -45,19 +45,19 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         this.initialChatbotCodeLink = initialChatbotCodeLink;
     }
 
-    public List<UsuariosInterfaz_21159364_BricenoVilches> getUsers() {
+    public List<Usuarios_21159364_BricenoVilches> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UsuariosInterfaz_21159364_BricenoVilches> users) {
+    public void setUsers(List<Usuarios_21159364_BricenoVilches> users) {
         this.users = users;
     }
 
-    public UsuariosInterfaz_21159364_BricenoVilches getUserLogged() {
+    public Usuarios_21159364_BricenoVilches getUserLogged() {
         return userLogged;
     }
 
-    public void setUserLogged(UsuariosInterfaz_21159364_BricenoVilches userLogged) {
+    public void setUserLogged(Usuarios_21159364_BricenoVilches userLogged) {
         this.userLogged = userLogged;
     }
 
@@ -107,6 +107,14 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         }
         return false;
     }
+    private boolean userDuplicado(List<Usuarios_21159364_BricenoVilches> users, String userName){
+        for(Usuarios_21159364_BricenoVilches user : users){
+            if (user.getUserName().equalsIgnoreCase(userName)){
+                return true;
+            }
+        }
+        return false;
+    }
     public void mostrarSystems(List<System_21159364_BricenoVilches> systems){
         int i = 1;
         for (System_21159364_BricenoVilches system : systems){
@@ -115,5 +123,53 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
     }
     public String toString(){
         return "System(" + name +"," + initialChatbotCodeLink + "," + users + "," + userLogged + "," + chatbots +")";
+    }
+    public void systemAddChatbot(Chatbot_21159364_BricenoVilches chatbot){
+        if (!chatbotDuplicado(getChatbots(), chatbot.getChatbotId())) {
+            this.chatbots.add(chatbot);
+            System.out.println("Chatbot añadido al sistema");
+        } else {
+            System.out.println("Id chatbot duplicado");
+        }
+    }
+    public void systemAddUser(Usuarios_21159364_BricenoVilches user){
+        if (!userDuplicado(getUsers(), user.getUserName())){
+            this.users.add(user);
+            System.out.println("Usuario añadido al sistema");
+        } else {
+            System.out.println("User ya existe en el sistema");
+        }
+    }
+    public void systemLogin(String userName){
+        if (getUserLogged() == null){
+            this.userLogged = Usuarios_21159364_BricenoVilches.findUser(getUsers(),userName);
+            if (userLogged != null) {
+                System.out.println("Usuario logeado al sistema");
+            }
+        } else {
+            System.out.println("User ya existe en el sistema");
+        }
+    }
+    public void systemLogout(){
+        if (getUserLogged() != null){
+            String chathistoryNuevo = this.userLogged.getChatHistory();
+            Usuarios_21159364_BricenoVilches user = Usuarios_21159364_BricenoVilches.findUser(getUsers(),this.userLogged.getUserName());
+            this.users.remove(user);
+            user.setChatHistory(chathistoryNuevo);
+            eliminarUser(user.getUserName());
+            users.add(user);
+            this.userLogged = null;
+            System.out.println("Usuario deslogeado del sistema: "+ user);
+        }
+    }
+    public void eliminarUser(String userName) {
+        for (Usuarios_21159364_BricenoVilches user : users) {
+            if (user.getUserName().equalsIgnoreCase(userName)) {
+                users.remove(user);
+                System.out.println("Usuario eliminado");
+                return;
+            }
+        }
+        System.out.println("Usuario no encontrado");
     }
 }
