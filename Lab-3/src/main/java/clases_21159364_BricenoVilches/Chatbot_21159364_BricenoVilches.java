@@ -26,6 +26,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         this.welcomeMessage = welcomeMessage;
         this.startFlowId = startFlowId;
         this.flows = flows;
+        System.out.println("Chatbot creado exitosamente.");
     }
 
     public int getChatbotId() {
@@ -100,12 +101,12 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
                 System.out.println("Número de flujo inválido. Inténtelo de nuevo.");
             }
         } while (flowChoice != 0);
-
         return new Chatbot_21159364_BricenoVilches(id, name, welcomeMessage,startFlowId,flows);
     }
     public void chatbotAddFlow(Flow_21159364_BricenoVilches flow){
         if (!flowDuplicado(getFlows(), flow.getId())) {
             this.flows.add(flow);
+            System.out.println("Flujo añadido a chatbot exitosamente.");
         } else {
             System.out.println("Id flujo duplicado");
         }

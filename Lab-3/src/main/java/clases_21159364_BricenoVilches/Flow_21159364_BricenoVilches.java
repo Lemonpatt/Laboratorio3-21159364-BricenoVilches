@@ -24,7 +24,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         this.id = id;
         this.name = name;
         this.options = options;
-        System.out.println("Flow creado exitósamente");
+        System.out.println("Flow creado exitosamente");
     }
 
     public void setId(int id) {
@@ -85,6 +85,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
     public void flowAddOption(Option_21159364_BricenoVilches option){
         if (!optionDuplicada(getOptions(), option.getId())) {
             this.options.add(option);
+            System.out.println("Opción añadida a flujo exitosamente.");
         } else {
         System.out.println("Id opción duplicada");
         }

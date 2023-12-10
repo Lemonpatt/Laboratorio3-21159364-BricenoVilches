@@ -30,7 +30,7 @@ public Option_21159364_BricenoVilches() {
         this.chatbotCodeLink = chatbotCodeLink;
         this.initialFlowCodeLink = initialFlowCodeLink;
         this.keywords = keywords;
-        System.out.println("Opción creada exitósamente");
+        System.out.println("Opción creada exitosamente");
     }
 
     public int getId() {
