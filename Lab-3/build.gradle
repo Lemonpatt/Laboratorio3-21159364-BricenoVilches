@@ -11,5 +11,8 @@ run {
 }
 
 application {
-    mainClass = 'org.example.Main'
+    mainClass = 'Main'
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
