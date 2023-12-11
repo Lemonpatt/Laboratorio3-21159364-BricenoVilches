@@ -101,7 +101,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         return flows;
     }
 
-    /**
+    /** Otro
      * <p> Permite crear un chatbot dandole sus atributos por consola primero y despues llamando al constructor
      * </p>
      * @param input A traves de consola
@@ -144,7 +144,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         return new Chatbot_21159364_BricenoVilches(id, name, welcomeMessage,startFlowId,flows);
     }
 
-    /**
+    /** Modificador
      * <p> RF 5: Añade un flujo dado al Chatbot, revisando si no esta duplicado
      * </p>
      * @param flow (Flow_21159364_BricenoVilches)
@@ -154,11 +154,12 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         if (!flowDuplicado(getFlows(), flow.getId())) {
             this.flows.add(flow);
             System.out.println("Flujo añadido a chatbot exitosamente.");
+            System.out.println("Chatbot modificado:" + this);
         } else {
             System.out.println("Id flujo duplicado");
         }
     }
-    /**
+    /** Pertenencia
      * <p> Permite revisar si una id de un flujo ya se encuentra en una lista de flujos
      * </p>
      * @param flows lista de flujos a revisar
@@ -173,7 +174,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         }
         return false;
     }
-    /**
+    /** Otro
      * <p> Muestra por consola todos los chatbots de una lista
      * </p>
      * @param chatbots lista de chatbots a mostrar
@@ -186,7 +187,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         }
     }
 
-    /**
+    /** Otro
      * <p> Escribe una instancia de chatbot como String si es pedido
      * </p>
      * @param null
@@ -196,7 +197,7 @@ public class Chatbot_21159364_BricenoVilches implements ChatbotInterfaz_21159364
         return "Chatbot(" + chatbotId + "," + name +"," + welcomeMessage + "," + startFlowId +"," + flows+")";
     }
 
-    /**
+    /** Selector
      * <p> Retorna el flow inicial del chatbot
      * </p>
      * @param null

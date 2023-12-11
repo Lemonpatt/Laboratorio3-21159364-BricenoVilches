@@ -106,7 +106,7 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
         return keywords;
     }
 
-    /**
+    /** Otro
      * <p> Permite crear una opcion dandole sus atributos por consola primero y despues llamando al constructor
      * </p>
      * @param input A traves de consola
@@ -134,7 +134,7 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
         return new Option_21159364_BricenoVilches(id, message, chatbotCodeLink, initialFlowCodeLink, keywords);
     }
 
-    /**
+    /** Otro
      * <p> Muestra por consola todas las opciones de una lista
      * </p>
      * @param opciones lista de opciones a mostrar
@@ -147,7 +147,7 @@ public class Option_21159364_BricenoVilches implements OptionInterfaz_21159364_B
         }
     }
 
-    /**
+    /** Otro
      * <p> Escribe una instancia de opcion como String si es pedido
      * </p>
      * @param null

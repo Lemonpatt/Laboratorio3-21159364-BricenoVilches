@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import static clases_21159364_BricenoVilches.Usuarios_21159364_BricenoVilches.findUser;
 /**
- * Clase de un sistema que implementa la interfaz de System.
+ * Clase de un sistema que implementa la interfaz de System, se le ha añadido el atributo de una lista de usuarios y el atributo de un usuario logeado singular.
  * Implementación de SystemInterfaz_21159364_BricenoVilches
  * Agregación de Usuarios_21159364_BricenoVilches
  * Agregación de Chatbot_21159364_BricenoVilches
@@ -113,7 +113,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         return chatbots;
     }
 
-    /**
+    /** Otro
      * <p> Permite crear un sistema dandole sus atributos por consola primero y despues llamando al constructor
      * </p>
      * @param input A traves de consola
@@ -151,7 +151,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
 
         return new System_21159364_BricenoVilches(name, initialChatbotCodeLink, chatbots);
     }
-    /**
+    /** Pertenencia
      * <p> Permite revisar si una id de un chatbot ya se encuentra en una lista de chatbots
      * </p>
      * @param chatbots lista de chatbots a revisar
@@ -167,7 +167,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         return false;
     }
 
-    /**
+    /** Pertenencia
      * <p> Permite revisar si un userName de un usuario ya se encuentra en una lista de usuarios
      * </p>
      * @param users lista de users a revisar
@@ -183,7 +183,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         return false;
     }
 
-    /**
+    /** Otro
      * <p> Muestra por consola todos los sistemas de una lista
      * </p>
      * @param systems lista de systems a mostrar
@@ -196,7 +196,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         }
     }
 
-    /**
+    /** Otro
      * <p> Escribe una instancia de sistema como String si es pedido
      * </p>
      * @param null
@@ -206,7 +206,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         return "System(" + name +"," + initialChatbotCodeLink + ","+ fechaCreacion +"," + users + "," + userLogged + "," + chatbots +")\n";
     }
 
-    /**
+    /** Modificador
      * <p> RF 8: Añade un chatbot dado al sistema, revisando si no esta duplicado
      * </p>
      * @param chatbot (Chatbot_21159364_BricenoVilches)
@@ -216,12 +216,13 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         if (!chatbotDuplicado(getChatbots(), chatbot.getChatbotId())) {
             this.chatbots.add(chatbot);
             System.out.println("Chatbot añadido al sistema");
+            System.out.println("Sistema modificado:" + this);
         } else {
             System.out.println("Id chatbot duplicado");
         }
     }
 
-    /**
+    /** Modificador
      * <p> RF 9: Añade un user dado al sistema, revisando si no esta duplicado
      * </p>
      * @param user (Usuarios_21159364_BricenoVilches)
@@ -231,12 +232,13 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         if (!userDuplicado(getUsers(), user.getUserName())){
             this.users.add(user);
             System.out.println("Usuario añadido al sistema");
+            System.out.println("Nueva lista de usuarios:" + users);
         } else {
             System.out.println("User ya existe en el sistema");
         }
     }
 
-    /**
+    /** Modificador
      * <p> RF 10: Logea un usuario al sistema desde un userName
      * </p>
      * @param userName (String)
@@ -254,7 +256,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         }
     }
 
-    /**
+    /** Modificador
      * <p> RF 11: Si hay un usuario logeado lo deslogea del sistema
      * </p>
      * @param null
@@ -267,7 +269,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         }
     }
 
-    /**
+    /** Modificador
      * <p> Elimina a un usuario dado un nombre dentro de la lista de usuarios del sistema
      * </p>
      * @param userName (String)
@@ -283,7 +285,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         System.out.println("Usuario no encontrado");
     }
 
-    /**
+    /** OTRO
      * <p> RF 12: Método que permite interactuar con un chatbot, solo funciona si hay un usuario logeado
      * </p>
      * @param mensaje (String) usado para hablar con el chatbot, puede ser la opción o palabra clave
@@ -315,7 +317,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         System.out.println("No se encontro opcion.");
     }
 
-    /**
+    /**  Selector
      * <p> Retorna el chatbot inicial del sistema
      * </p>
      * @param null
@@ -332,7 +334,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
 
     }
 
-    /**
+    /** OTRO
      * <p> RF 13:  Método que ofrece una síntesis del chatbot para un usuario particular  a partir de chatHistory contenido dentro del sistema
      * </p>
      * @param userName (String) el nombre del usuario del cual mostrara la sintesis
@@ -355,7 +357,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         }
     }
 
-    /**
+    /** OTRO
      * <p> Llamado por systemTalk, actualiza el chatHistory del user del cual esta hablando con un chatbot
      * </p>
      * @param null
@@ -373,7 +375,7 @@ public class System_21159364_BricenoVilches implements SystemInterfaz_21159364_B
         users.add(user);
     }
 
-    /**
+    /**  OTRO
      * <p> RF 14: Permite simular un diálogo entre dos chatbots del sistema.
      * </p>
      * @param maxInteractions (int) cantidad de interacciones de la simulacion

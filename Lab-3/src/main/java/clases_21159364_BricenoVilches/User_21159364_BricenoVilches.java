@@ -15,7 +15,7 @@ public class User_21159364_BricenoVilches extends Usuarios_21159364_BricenoVilch
     public User_21159364_BricenoVilches(String userName) {
         super(userName);
     }
-    /**
+    /** Otro
      * <p> Revisa si un usuario es de tipo Admin o regular, Sobreescritura
      * </p>
      * @param null

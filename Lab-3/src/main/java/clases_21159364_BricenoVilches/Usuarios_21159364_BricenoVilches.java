@@ -52,7 +52,7 @@ public abstract class Usuarios_21159364_BricenoVilches implements UsuariosInterf
         this.chatHistory = chatHistory;
     }
 
-    /**
+    /** Selector
      * <p> Retorna una instancia nueva de un usuario encontrado dado un nombre de usuario en una lista de usuarios
      * </p>
      * @param users (List) Lista de usuarios
@@ -77,7 +77,7 @@ public abstract class Usuarios_21159364_BricenoVilches implements UsuariosInterf
         return null;
     }
 
-    /**
+    /** Otro
      * <p> Escribe una instancia de usuario como String si es pedido
      * </p>
      * @param null
@@ -87,7 +87,7 @@ public abstract class Usuarios_21159364_BricenoVilches implements UsuariosInterf
         return userName;
     }
 
-    /**
+    /** Otro
      * <p> Metodo abstracto que aplicaran las subclases
      * </p>
      * @param null

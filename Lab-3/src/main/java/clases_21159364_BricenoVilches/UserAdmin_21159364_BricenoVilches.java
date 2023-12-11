@@ -16,7 +16,7 @@ public class UserAdmin_21159364_BricenoVilches extends Usuarios_21159364_Briceno
         super(userName);
     }
 
-    /**
+    /** Otro
      * <p> Revisa si un usuario es de tipo Admin o regular, Sobreescritura
      * </p>
      * @param null

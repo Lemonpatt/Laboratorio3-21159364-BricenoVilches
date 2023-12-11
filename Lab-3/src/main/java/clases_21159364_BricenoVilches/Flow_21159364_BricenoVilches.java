@@ -75,7 +75,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         return options;
     }
 
-    /**
+    /** Otro
      * <p> Permite crear un flujo dandole sus atributos por consola primero y despues llamando al constructor
      * </p>
      * @param input A traves de consola
@@ -114,7 +114,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
 
         return new Flow_21159364_BricenoVilches(id, name, opciones);
     }
-    /**
+    /** Modificador
      * <p> RF 3: Añade una opcion dado al flujo, revisando si no esta duplicado
      * </p>
      * @param option (Option_21159364_BricenoVilches)
@@ -123,12 +123,13 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
     public void flowAddOption(Option_21159364_BricenoVilches option){
         if (!optionDuplicada(getOptions(), option.getId())) {
             this.options.add(option);
+            System.out.println("Flow modificado:" + this);
         } else {
         System.out.println("Id opcion duplicada");
         }
     }
 
-    /**
+    /** Pertenencia
      * <p> Permite revisar si una id de una opcion ya se encuentra en una lista de opciones
      * </p>
      * @param options lista de opciones a revisar
@@ -144,7 +145,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         return false;
     }
 
-    /**
+    /** Otro
      * <p> Muestra por consola todos los flujos de una lista
      * </p>
      * @param flows lista de flujos a mostrar
@@ -157,7 +158,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         }
     }
 
-    /**
+    /** Otro
      * <p> Escribe una instancia de flujo como String si es pedido
      * </p>
      * @param null
@@ -167,7 +168,7 @@ public class Flow_21159364_BricenoVilches implements FlowInterfaz_21159364_Brice
         return "Flow(" + id + "," + name +"," + options +")";
     }
 
-    /**
+    /** Otro
      * <p> Muestra por consola todas las opciones de un flujo
      * </p>
      * @param null
